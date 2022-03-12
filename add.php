@@ -20,27 +20,25 @@
     <form id="product_form" action="add.php" method="POST">
 
         <label for="sku">SKU</label>
-        <input type="text" id="sku" name="sku" value="" placeholder="Please provide SKU">
-        <div class="error_sku"></div>
+        <input type="text" id="sku" name="sku" value="" placeholder="Please provide SKU" oninput="clearErrorField(this.id)">
+        <div id="error_sku" class="error"></div>
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" value="" placeholder="Please provide Name">
-        <div class="error_name"></div>
+        <input type="text" id="name" name="name" value="" placeholder="Please provide Name" oninput="clearErrorField(this.id)">
+        <div id="error_name" class="error"></div>
         <label for="price">Price ($)</label>
-        <input type="text" id="price" name="price" value="" placeholder="Please provide Price">
-        <div class="error_price"></div>
+        <input type="text" id="price" name="price" value="" placeholder="Please provide Price" oninput="clearErrorField(this.id)">
+        <div id="error_price" class="error"></div>
         <label for="productType">Type Switcher</label>
 
-        <select name="productType" id="productType" onchange="setForm(this.id)">
+        <select name="productType" id="productType" onchange="setForm(this.id)" oninput="clearErrorField(this.id)">
             <option value="empty">Select Type</option>
             <option value="DVD">DVD</option>
             <option value="Book">Book</option>
             <option value="Furniture">Furniture</option>
         </select>
-        <div class="error_type"></div>
+        <div id="error_productType" class="error"></div>
 
-        <div id="prod_type">
-
-        </div>
+        <div id="prod_type"></div>
 
         <script>
             function setForm(productType){
@@ -55,27 +53,48 @@
                 //We are sending the address to the PHP to get the template
 
                 $.ajax(
-                    {
-                    type: 'POST',
-                    url: 'requests/ajax_request.php',
-                    data: { address1:address },
-                    success: function(response) {
+                        {
+                        type: 'POST',
+                        url: 'requests/ajax_request.php',
+                        data: { address1:address },
+                        success: function(response) {
 
-                        // console.log(response); // it logs php form template
+                            // console.log(response); // it logs php form template
 
-                        $("#prod_type").html(response);
+                            $("#prod_type").html(response);
+                        }
                     }
-                }
                 );
 
-                // return address;
-
-                }
+            }
         </script>
 
-        <input type="submit" id="submit" name="submit" value="submit">
+        <input type="submit" id="submit" name="submit" value="Save" >
+        <input type="button" id="cancel" name="cancel" value="Cancel" onclick="location.href = 'index.php';">
 
         <script>
+
+
+
+            function clearErrorField(IDtoClear){
+                let fieldToClear = document.getElementById('error_' + IDtoClear);
+                console.log(fieldToClear);
+                fieldToClear.innerHTML = "";
+            }
+
+            // let inputs = document.forms["product_form"].getElementsByTagName("input");
+            //
+            // //converts htmlcollection to array
+            // var arr = Array.prototype.slice.call( inputs );
+            // console.log(arr);
+            // arr.forEach(input=>{
+            //     input.addEventListener('click',event => {
+            //         let errorsField = input.closest(".error");
+            //         console.log(errorsField);
+            //         errorsField.innerHTML=" ";
+            //
+            //     })
+            // })
 
                 $('#product_form').submit(function (event) {
 
@@ -88,7 +107,18 @@
                         data: $(this).serialize(),
                         success: function (response) {
                             console.log(response);
-                            // response = JSON.parse(response);
+
+                            // turning json string into a js object
+                            response = JSON.parse(response);
+
+                            // console.log(Object.keys(response));
+                            Object.keys(response).forEach((error) => {
+                                let errorField = document.getElementById('error_'+error);
+
+                                // console.log(errorField);
+
+                                errorField.innerHTML = response[error];
+                            })
                         }
                     });
 
