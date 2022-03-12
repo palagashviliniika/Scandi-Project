@@ -22,6 +22,7 @@ Class validator {
         $this->validateSKU();
         $this->validateName();
         $this->validatePrice();
+        $this->validateType();
 
         switch ($this->data["productType"]) {
             case 'DVD':
@@ -47,11 +48,6 @@ Class validator {
         if(empty($val)){
             $this->addError('sku','Please, submit required data');
         }
-//        else {
-//            if (!filter_var($val, FILTER_VALIDATE_EMAIL)){
-//                $this->addError('email','Email is incorrect');
-//            }
-//        }
     }
 
     private function validateName(){
@@ -78,13 +74,21 @@ Class validator {
         }
     }
 
+    private function validateType(){
+        $val = trim($this->data['productType']);
+
+        if ($val == "empty"){
+            $this->addError('productType','Please, submit required data');
+        }
+    }
+
     private function validateSize(){
         $val = trim($this->data['size']);
 
         if (empty($val)) {
             $this->addError('size', 'Please, submit required data');
         } else {
-            if (!preg_match('/([+-]?(?=\\.\\d|\\d)(?:\\d+)?(?:\\.?\\d*))(?:[eE]([+-]?\\d+))?/i', $val)){
+            if (!preg_match('/^[0-9.]+$/', $val)){
                 $this->addError('size', 'Please, provide the data of indicated type');
             }
         }
@@ -96,7 +100,7 @@ Class validator {
         if (empty($val)) {
             $this->addError('weight', 'Please, submit required data');
         } else {
-            if (!preg_match('/([+-]?(?=\\.\\d|\\d)(?:\\d+)?(?:\\.?\\d*))(?:[eE]([+-]?\\d+))?/i', $val)){
+            if (!preg_match('/^[0-9.]+$/', $val)){
                 $this->addError('weight', 'Please, provide the data of indicated type');
             }
         }
@@ -108,7 +112,7 @@ Class validator {
         if (empty($val)) {
             $this->addError('height', 'Please, submit required data');
         } else {
-            if (!preg_match('/([+-]?(?=\\.\\d|\\d)(?:\\d+)?(?:\\.?\\d*))(?:[eE]([+-]?\\d+))?/i', $val)){
+            if (!preg_match('/^[0-9.]+$/', $val)){
                 $this->addError('height', 'Please, provide the data of indicated type');
             }
         }
@@ -120,7 +124,7 @@ Class validator {
         if (empty($val)) {
             $this->addError('width', 'Please, submit required data');
         } else {
-            if (!preg_match('/([+-]?(?=\\.\\d|\\d)(?:\\d+)?(?:\\.?\\d*))(?:[eE]([+-]?\\d+))?/i', $val)){
+            if (!preg_match('/^[0-9.]+$/', $val)){
                 $this->addError('width', 'Please, provide the data of indicated type');
             }
         }
@@ -132,7 +136,7 @@ Class validator {
         if (empty($val)) {
             $this->addError('length', 'Please, submit required data');
         } else {
-            if (!preg_match('/([+-]?(?=\\.\\d|\\d)(?:\\d+)?(?:\\.?\\d*))(?:[eE]([+-]?\\d+))?/i', $val)){
+            if (!preg_match('/^[0-9.]+$/i', $val)){
                 $this->addError('length', 'Please, provide the data of indicated type');
             }
         }

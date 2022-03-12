@@ -1,18 +1,5 @@
 <?php
 
-require 'classes/product_validator.class.php';
-
-$sku = $name = $price = '';
-
-
-if (isset($_POST['submit'])){
-
-    $validation = new validator($_POST);
-    $errors = $validation->validateForm();
-
-    print_r($errors);
-}
-
 ?>
 
 <!doctype html>
@@ -34,13 +21,13 @@ if (isset($_POST['submit'])){
 
         <label for="sku">SKU</label>
         <input type="text" id="sku" name="sku" value="" placeholder="Please provide SKU">
-        <div class="error_sku"><?php echo $errors['sku'] ?? '';?></div>
+        <div class="error_sku"></div>
         <label for="name">Name</label>
         <input type="text" id="name" name="name" value="" placeholder="Please provide Name">
-        <div class="error_name"><?php echo $errors['name'] ?? '';?></div>
+        <div class="error_name"></div>
         <label for="price">Price ($)</label>
         <input type="text" id="price" name="price" value="" placeholder="Please provide Price">
-        <div class="error_price"><?php echo $errors['price'] ?? '';?></div>
+        <div class="error_price"></div>
         <label for="productType">Type Switcher</label>
 
         <select name="productType" id="productType" onchange="setForm(this.id)">
@@ -81,11 +68,33 @@ if (isset($_POST['submit'])){
                 }
                 );
 
-                return address;
+                // return address;
 
                 }
         </script>
+
         <input type="submit" id="submit" name="submit" value="submit">
+
+        <script>
+
+                $('#product_form').submit(function (event) {
+
+                    event.preventDefault();
+
+                    $.ajax({
+                        type: 'post',
+                        dataType: 'text',
+                        url: 'requests/ajax_add_request.php',
+                        data: $(this).serialize(),
+                        success: function (response) {
+                            console.log(response);
+                            // response = JSON.parse(response);
+                        }
+                    });
+
+                });
+
+        </script>
 
     </form>
 </section>
