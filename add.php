@@ -82,7 +82,7 @@
 
             function clearErrorField(IDtoClear){
                 let fieldToClear = document.getElementById('error_' + IDtoClear);
-                console.log(fieldToClear);
+                // console.log(fieldToClear);
                 fieldToClear.innerHTML = "";
             }
 
@@ -97,23 +97,26 @@
                         url: 'requests/ajax_add_request.php',
                         data: $(this).serialize(),
                         success: function (response) {
-                            console.log(response);
 
-                            // turning json string into a js object
-                            response = JSON.parse(response);
+                            if (!response) {
+                                window.location.href = "index.php";
+                            } else {
+                                console.log(response);
 
-                            // console.log(Object.keys(response));
-                            Object.keys(response).forEach((error) => {
-                                let errorField = document.getElementById('error_'+error);
+                                // turning json string into a js object
+                                response = JSON.parse(response);
 
-                                // console.log(errorField);
+                                // console.log(Object.keys(response));
+                                Object.keys(response).forEach((error) => {
+                                    let errorField = document.getElementById('error_' + error);
 
-                                errorField.innerHTML = response[error];
-                            })
+                                    // console.log(errorField);
+
+                                    errorField.innerHTML = response[error];
+                                })
+                            }
                         }
-
                     });
-
                 });
 
         </script>

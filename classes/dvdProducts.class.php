@@ -1,8 +1,10 @@
 <?php
+require_once ('products.class.php');
+
 
 class DvdProducts extends Products {
 
-    public function getProduct($const){
+    public function getProduct(){
 
     }
 
