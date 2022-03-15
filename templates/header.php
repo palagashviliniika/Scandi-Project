@@ -1,3 +1,9 @@
+<?php
+
+    include 'includes/autoloader.inc.php';
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,5 +29,3 @@
             </ul>
         </div>
     </nav>
-
-<?php include 'includes/autoloader.inc.php'; ?>

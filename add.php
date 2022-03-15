@@ -74,7 +74,11 @@
 
         <script>
 
-
+            // const inputElement = document.getElementById('error_sku');
+            //
+            // inputElement.addEventListener('change', (event) => {
+            //     inputElement.innerHTML = "";
+            // });
 
             function clearErrorField(IDtoClear){
                 let fieldToClear = document.getElementById('error_' + IDtoClear);
@@ -82,19 +86,6 @@
                 fieldToClear.innerHTML = "";
             }
 
-            // let inputs = document.forms["product_form"].getElementsByTagName("input");
-            //
-            // //converts htmlcollection to array
-            // var arr = Array.prototype.slice.call( inputs );
-            // console.log(arr);
-            // arr.forEach(input=>{
-            //     input.addEventListener('click',event => {
-            //         let errorsField = input.closest(".error");
-            //         console.log(errorsField);
-            //         errorsField.innerHTML=" ";
-            //
-            //     })
-            // })
 
                 $('#product_form').submit(function (event) {
 
@@ -120,6 +111,7 @@
                                 errorField.innerHTML = response[error];
                             })
                         }
+
                     });
 
                 });
