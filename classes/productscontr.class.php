@@ -6,11 +6,25 @@ require_once ("furnitureProducts.class.php");
 
 
 class ProductsContr{
-    public function setProductHandler($postData){
+    private $postData;
+
+    public function __construct($postData){
+        $this->postData=$postData;
+    }
+
+    public function setData($postData){
+        $this->postData=$postData;
+    }
+
+    public function getData(){
+        return $this->postData;
+    }
+
+    public function setProductHandler(){
         $types = ['DVD'=>'DvdProducts', 'Book'=>'BookProducts', 'Furniture'=>'FurnitureProducts'];
-        $className = $types[$postData['productType']];
+        $className = $types[$this->postData['productType']];
         $modelToCall = new $className();
-        $modelToCall->setProduct($postData);
+        $modelToCall->setProduct($this->postData);
     }
 }
 

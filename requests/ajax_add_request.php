@@ -11,8 +11,8 @@ if ($errors){
     print_r(json_encode($errors));
 } else{
 
-    $saveProduct = new ProductsContr();
-    $saveProduct->setProductHandler($_POST);
+    $saveProduct = new ProductsContr($_POST);
+    $saveProduct->setProductHandler();
 }
 
 ?>
