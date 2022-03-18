@@ -3,6 +3,7 @@
 require_once ("dvdProducts.class.php");
 require_once ("bookProducts.class.php");
 require_once ("furnitureProducts.class.php");
+require_once ("products.class.php");
 
 
 class ProductsContr{
@@ -25,6 +26,19 @@ class ProductsContr{
         $className = $types[$this->postData['productType']];
         $modelToCall = new $className();
         $modelToCall->setProduct($this->postData);
+    }
+
+    public function deleteProducts(){
+        if (empty($this->postData['delete-checkbox'])){
+            header('Location: index.php');
+        } else {
+            $delete = new Products();
+
+            foreach ($_POST['delete-checkbox'] as $checkbox){
+                $delete->deleteProducts($checkbox);
+            }
+            header('Location: index.php');
+        }
     }
 }
 

@@ -25,7 +25,7 @@
             <a href="index.php">Task Page</a>
             <ul>
                 <li><a href="add.php"><button>ADD</button></a></li>
-                <li><button id="delete-product-btn">MASS DELETE</button></li>
+                <li><button id="delete-product-btn" form="delete_product_form" value="Delete" name="delete-product-btn">MASS DELETE</button></li>
             </ul>
         </div>
     </nav>

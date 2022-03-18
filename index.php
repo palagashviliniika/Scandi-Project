@@ -1,23 +1,23 @@
 <?php
 require 'classes/productsview.class.php';
+require 'classes/productscontr.class.php';
 
-//$dvd = new ProductsView();
-//$dvds = $dvd -> showTypes('DVD', 'DvdProducts');
-//
-//$book = new ProductsView();
-//$books = $book -> showTypes('Book', 'BookProducts');
-//
-//$furniture = new ProductsView();
-//$furnitures = $furniture -> showTypes('Furniture', 'FurnitureProducts');
+$dvdProducts = new ProductsView();
+$dvds = $dvdProducts -> showTypes('DVD', 'DvdProducts');
+
+$bookProducts = new ProductsView();
+$books = $bookProducts -> showTypes('Book', 'BookProducts');
+
+$furnitureProducts = new ProductsView();
+$furnitures = $furnitureProducts -> showTypes('Furniture', 'FurnitureProducts');
 
 
-//$products = array_merge($dvds, $books, $furnitures);
+//----------------------------------------------
 
-$products = new ProductsView();
-$results = $products->showAll();
-
-asort($results);
-print_r($results);
+if (isset($_POST['delete-product-btn'])){
+    $delete = new ProductsContr($_POST);
+    $delete->deleteProducts();
+}
 
 ?>
 
@@ -27,25 +27,83 @@ print_r($results);
 <?php include 'templates/header.php'; ?>
 
 
-<h4>Browse Products!</h4>
+<h1>Browse Products!</h1>
 
 <div class="container">
     <div class="row">
 
-        <?php foreach ($results as $result){ ?>
+        <form action="index.php" method="post" id="delete_product_form">
 
-        <div class="column">
-            <div class="card">
-                <div class="card_content">
-                    <h5><?php echo htmlspecialchars($result['sku']); ?></h5>
-                    <h3><?php echo  htmlspecialchars($result['name']); ?></h3>
-                    <h4><?php echo  htmlspecialchars($result['price']).'$'  ; ?></h4>
-                    <h4><?php echo  htmlspecialchars(@$result['size'])  ; ?></h4>
+            <h2>Netflix? Who Needs Them?!</h2>
+
+            <?php foreach ($dvds as $dvd){ ?>
+
+            <div class="columns">
+                <div class="card">
+
+                    <label for="">
+                        <input type="checkbox" class="delete-checkbox" name="delete-checkbox[]" value="<?php echo htmlspecialchars($dvd['id']); ?>">
+                        Choose to delete
+                    </label>
+
+                    <div class="card_content">
+                        <h5><?php echo htmlspecialchars($dvd['sku']); ?></h5>
+                        <h3><?php echo htmlspecialchars($dvd['name']); ?></h3>
+                        <h5><?php echo htmlspecialchars($dvd['price']).'$'; ?></h5>
+                        <h5><?php echo 'Size: '.htmlspecialchars($dvd['size']).'MB'; ?></h5>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <?php } ?>
+            <?php } ?>
+
+            <h2>a Book a Day Keeps Reality Away!</h2>
+
+            <?php foreach ($books as $book){ ?>
+
+            <div class="columns">
+                <div class="card">
+
+                    <label for="">
+                        <input type="checkbox" class="delete-checkbox" name="delete-checkbox[]" value="<?php echo htmlspecialchars($book['id']); ?>">
+                        Choose to delete
+                    </label>
+
+                    <div class="card_content">
+                        <h5><?php echo htmlspecialchars($book['sku']); ?></h5>
+                        <h3><?php echo htmlspecialchars($book['name']); ?></h3>
+                        <h5><?php echo htmlspecialchars($book['price']).'$'; ?></h5>
+                        <h5><?php echo 'Weight: '.htmlspecialchars($book['weight']).'KG'; ?></h5>
+                    </div>
+                </div>
+            </div>
+
+            <?php } ?>
+
+            <h2>Once You Sit On Them, You Will Never Stand Again!</h2>
+
+            <?php foreach ($furnitures as $furniture){ ?>
+
+            <div class="columns">
+                <div class="card">
+
+                    <label for="">
+                        <input type="checkbox" class="delete-checkbox" name="delete-checkbox[]" value="<?php echo htmlspecialchars($furniture['id']); ?>">
+                        Choose to delete
+                    </label>
+
+                    <div class="card_content">
+                        <h5><?php echo htmlspecialchars($furniture['sku']); ?></h5>
+                        <h3><?php echo htmlspecialchars($furniture['name']); ?></h3>
+                        <h5><?php echo htmlspecialchars($furniture['price']).'$'; ?></h5>
+                        <h5><?php echo 'Dimensions: '.htmlspecialchars($furniture['height']).'x'.htmlspecialchars($furniture['width']).'x'.htmlspecialchars($furniture['length']); ?></h5>
+                    </div>
+                </div>
+            </div>
+
+            <?php } ?>
+
+        </form>
 
     </div>
 </div>
