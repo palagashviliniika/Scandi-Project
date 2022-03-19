@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/products.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/products.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/productscontr.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/classes/productscontr.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +13,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,7 +77,8 @@
       <workItem from="1647294817912" duration="10033000" />
       <workItem from="1647365169124" duration="10782000" />
       <workItem from="1647457421933" duration="12149000" />
-      <workItem from="1647553594751" duration="7866000" />
+      <workItem from="1647553594751" duration="7970000" />
+      <workItem from="1647647349208" duration="2106000" />
     </task>
     <servers />
   </component>

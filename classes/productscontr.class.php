@@ -32,10 +32,9 @@ class ProductsContr{
         if (empty($this->postData['delete-checkbox'])){
             header('Location: index.php');
         } else {
-            $delete = new Products();
 
             foreach ($_POST['delete-checkbox'] as $checkbox){
-                $delete->deleteProducts($checkbox);
+                Products::deleteProducts($checkbox);
             }
             header('Location: index.php');
         }

@@ -4,9 +4,10 @@ require_once ('Dbh.class.php');
 
 abstract class Products extends Dbh{
 
-    public function deleteProducts($id){
+    public static function deleteProducts($id){
         $sql = "DELETE FROM products WHERE id=?";
-        $stmt =  $this->connect()->prepare($sql);
+        $newDbh = new Dbh();
+        $stmt =  $newDbh->connect()->prepare($sql);
         $stmt->execute([$id]);
     }
 
