@@ -11,11 +11,6 @@ $books = $bookProducts -> showTypes('Book', 'BookProducts');
 $furnitureProducts = new ProductsView();
 $furnitures = $furnitureProducts -> showTypes('Furniture', 'FurnitureProducts');
 
-
-//----------------------------------------------
-
-
-
 ?>
 
 <!doctype html>
