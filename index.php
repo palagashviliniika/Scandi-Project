@@ -1,6 +1,6 @@
 <?php
 require 'classes/productsview.class.php';
-require 'classes/productscontr.class.php';
+include 'requests/delete_request.php';
 
 $dvdProducts = new ProductsView();
 $dvds = $dvdProducts -> showTypes('DVD', 'DvdProducts');
@@ -14,10 +14,7 @@ $furnitures = $furnitureProducts -> showTypes('Furniture', 'FurnitureProducts');
 
 //----------------------------------------------
 
-if (isset($_POST['delete-product-btn'])){
-    $delete = new ProductsContr($_POST);
-    $delete->deleteProducts();
-}
+
 
 ?>
 
@@ -32,7 +29,7 @@ if (isset($_POST['delete-product-btn'])){
 <div class="container">
     <div class="row">
 
-        <form action="index.php" method="post" id="delete_product_form">
+        <form action="requests/delete_request.php" method="post" id="delete_product_form">
 
             <h2>Netflix? Who Needs Them?!</h2>
 

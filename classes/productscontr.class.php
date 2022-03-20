@@ -30,13 +30,13 @@ class ProductsContr{
 
     public function deleteProducts(){
         if (empty($this->postData['delete-checkbox'])){
-            header('Location: index.php');
+            header('Location: ../index.php');
         } else {
 
             foreach ($_POST['delete-checkbox'] as $checkbox){
                 Products::deleteProducts($checkbox);
             }
-            header('Location: index.php');
+            header('Location: ../index.php');
         }
     }
 }
