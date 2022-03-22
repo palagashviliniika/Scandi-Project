@@ -32,12 +32,19 @@ class ProductsContr{
         if (empty($this->postData['delete-checkbox'])){
             header('Location: ../index.php');
         } else {
-
-            foreach ($_POST['delete-checkbox'] as $checkbox){
-                Products::deleteProducts($checkbox);
-            }
+            $string = implode(', ',$_POST['delete-checkbox']);
+//            echo $string;
+            Products::deleteProducts($string);
+//            foreach ($_POST['delete-checkbox'] as $checkbox){
+//                Products::deleteProducts($checkbox);
+//            }
             header('Location: ../index.php');
         }
+    }
+
+    public static function getSkus(){
+        $results = Products::getSku();
+        return $results;
     }
 }
 

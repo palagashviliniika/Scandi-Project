@@ -45,8 +45,19 @@ Class validator {
     private function validateSKU(){
         $val = trim($this->data['sku']);
 
+        $skus = ProductsContr::getSkus();
+        foreach ($skus as $sku){
+            if ($val==$sku['sku']){
+                $this->addError('sku', 'SKU Must be unique');
+            }
+        }
+
         if(empty($val)){
             $this->addError('sku','Please, submit required data');
+        } else{
+            if (!preg_match('/^[A-Z]+[0-9]+[0-9A-Z]+$/', $val)){
+                $this->addError('sku', 'Please, provide the proper SKU');
+            }
         }
     }
 
@@ -57,7 +68,7 @@ Class validator {
             $this->addError('name', 'Please, submit required data');
         } else {
             if (!preg_match('/^[a-zA-Z\s\']+$/', $val)){
-                $this->addError('name', 'Please, provide the data of indicated type');
+                $this->addError('name', 'Please, provide the proper name');
             }
         }
     }
@@ -69,7 +80,7 @@ Class validator {
             $this->addError('price','Please, submit required data');
         } else {
             if (!preg_match('/[0-9]+\\.[0-9]+/i', $val)){
-                $this->addError('price', 'Please, provide the data of indicated type');
+                $this->addError('price', 'Please, provide the proper price');
             }
         }
     }
@@ -89,7 +100,7 @@ Class validator {
             $this->addError('size', 'Please, submit required data');
         } else {
             if (!preg_match('/^[0-9.]+$/', $val)){
-                $this->addError('size', 'Please, provide the data of indicated type');
+                $this->addError('size', 'Please, provide the proper size');
             }
         }
     }
@@ -101,7 +112,7 @@ Class validator {
             $this->addError('weight', 'Please, submit required data');
         } else {
             if (!preg_match('/^[0-9.]+$/', $val)){
-                $this->addError('weight', 'Please, provide the data of indicated type');
+                $this->addError('weight', 'Please, provide the proper weight');
             }
         }
     }
@@ -113,7 +124,7 @@ Class validator {
             $this->addError('height', 'Please, submit required data');
         } else {
             if (!preg_match('/^[0-9.]+$/', $val)){
-                $this->addError('height', 'Please, provide the data of indicated type');
+                $this->addError('height', 'Please, provide the proper height');
             }
         }
     }
@@ -125,7 +136,7 @@ Class validator {
             $this->addError('width', 'Please, submit required data');
         } else {
             if (!preg_match('/^[0-9.]+$/', $val)){
-                $this->addError('width', 'Please, provide the data of indicated type');
+                $this->addError('width', 'Please, provide the proper width');
             }
         }
     }
@@ -137,7 +148,7 @@ Class validator {
             $this->addError('length', 'Please, submit required data');
         } else {
             if (!preg_match('/^[0-9.]+$/i', $val)){
-                $this->addError('length', 'Please, provide the data of indicated type');
+                $this->addError('length', 'Please, provide the proper length');
             }
         }
     }

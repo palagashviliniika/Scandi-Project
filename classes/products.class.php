@@ -4,11 +4,21 @@ require_once ('Dbh.class.php');
 
 abstract class Products extends Dbh{
 
-    public static function deleteProducts($id){
-        $sql = "DELETE FROM products WHERE id=?";
-        $newDbh = new Dbh();
-        $stmt =  $newDbh->connect()->prepare($sql);
-        $stmt->execute([$id]);
+    public static function deleteProducts($ids){
+        $sql = "DELETE FROM products WHERE id IN ($ids)";
+        $host = new Dbh();
+        $stmt = $host->connect()->prepare($sql);
+        $stmt->execute();
+    }
+
+    public static function getSku(){
+        $sql = "SELECT sku FROM products";
+        $host = new Dbh();
+        $stmt = $host->connect()->prepare($sql);
+        $stmt->execute();
+
+        $results = $stmt->fetchAll();
+        return $results;
     }
 
     abstract public function getProduct($type);
