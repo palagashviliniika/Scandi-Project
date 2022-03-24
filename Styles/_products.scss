@@ -1,0 +1,77 @@
+@mixin flexCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+$secondaryColor: #FF0077;
+$primaryColor: black;
+
+.products{
+    width: 100vw;
+    margin: 0 auto;
+    padding-bottom: 90px;
+    margin-top: 4rem;
+
+    .container{
+        width: 80vw;
+        margin: 0 auto;
+        padding: 0 25px;
+
+        h1{
+            font-size: 3rem;
+        }
+
+        form{
+            h2{
+                padding: 25px 0;
+            }
+
+            .section{
+                @include flexCenter();
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: stretch;
+
+                .card{
+                    width: 22%;
+                    min-height: 20vh;
+                    margin: 0 auto 25px auto;
+                    padding: 25px;
+                    box-shadow: 0px 5px 10px 0px rgba(0.5,1,2,0.2);
+                    display: flex;
+                    justify-items: center;
+                    flex-direction: column;
+
+                    transition: .2s all linear;
+
+                    &:hover{
+                        transform: scale(1.03);
+                        box-shadow: 0px 5px 20px 0px rgba(0.5,1,2,0.3);
+                        background-color: $secondaryColor;
+                    }
+
+                    &:hover .checkbox{
+                        color: white;
+                    }
+
+                    .card_content{
+                        padding-top: 20px;
+
+                        h3{
+                            padding: 2px 0;
+                        }
+
+                        h5{
+                            padding: 2px 0;
+                        }
+                    }
+
+                    .checkbox{
+                        color: #FF0077;
+                        transition: .2s all linear;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+// nav.scss
+@mixin flexCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+$secondaryColor: #FF0077;
+$primaryColor: black;
+
+.nav{
+    width: 100vw;
+    padding: 1.7rem 0 1.75rem 0;
+    margin: 0 auto;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+    .container{
+        max-width: 80vw;
+        margin: 0 auto;
+        padding: 0 25px;
+        @include flexCenter();
+
+        .title{
+            @include flexCenter();
+
+            .fa{
+                font-size: 3rem;
+                text-decoration: none;
+                color: $primaryColor;
+                &:hover{
+                    color: $secondaryColor;
+                    font-size: 3rem;
+                    transform: scale(1.1);
+                }
+                transition: 0.2s all linear;
+            }
+
+            .name{
+                font-size: 1.5rem;
+                color: $primaryColor;
+                text-decoration: none;
+                margin-left: 1.5rem;
+            }
+        }
+
+        .navbar{
+            @include flexCenter();
+
+            button{
+                margin-left: 2rem;
+                padding: 3px 5px;
+                color: $secondaryColor;
+                background-color: white;
+                font-size: 1.5rem;
+                border-radius: 5px;
+                border: none;
+                transition: 0.2s all linear;
+
+                &:hover{
+                    background-color: $secondaryColor;
+                    color: white;
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

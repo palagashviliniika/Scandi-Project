@@ -1,0 +1,26 @@
+$primaryFontFamily: 'Montserrat', sans-serif;
+$primaryColor: #FF0077;
+
+@import "./nav";
+@import "./products";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: $primaryFontFamily;
+    font-size: 1rem;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5{
+    padding: 0;
+    margin: 0;
+}
+

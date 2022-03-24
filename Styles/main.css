@@ -1,0 +1,201 @@
+.nav {
+  width: 100vw;
+  padding: 1.7rem 0 1.75rem 0;
+  margin: 0 auto;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.nav .container {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 0 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav .container .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav .container .title .fa {
+  font-size: 3rem;
+  text-decoration: none;
+  color: black;
+  -webkit-transition: 0.2s all linear;
+  transition: 0.2s all linear;
+}
+
+.nav .container .title .fa:hover {
+  color: #FF0077;
+  font-size: 3rem;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.nav .container .title .name {
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  margin-left: 1.5rem;
+}
+
+.nav .container .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav .container .navbar button {
+  margin-left: 2rem;
+  padding: 3px 5px;
+  color: #FF0077;
+  background-color: white;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: 0.2s all linear;
+  transition: 0.2s all linear;
+}
+
+.nav .container .navbar button:hover {
+  background-color: #FF0077;
+  color: white;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  cursor: pointer;
+}
+
+.products {
+  width: 100vw;
+  margin: 0 auto;
+  padding-bottom: 90px;
+  margin-top: 4rem;
+}
+
+.products .container {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.products .container h1 {
+  font-size: 3rem;
+}
+
+.products .container form h2 {
+  padding: 25px 0;
+}
+
+.products .container form .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.products .container form .section .card {
+  width: 22%;
+  min-height: 20vh;
+  margin: 0 auto 25px auto;
+  padding: 25px;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(1, 1, 2, 0.2);
+          box-shadow: 0px 5px 10px 0px rgba(1, 1, 2, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: .2s all linear;
+  transition: .2s all linear;
+}
+
+.products .container form .section .card:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-box-shadow: 0px 5px 20px 0px rgba(1, 1, 2, 0.3);
+          box-shadow: 0px 5px 20px 0px rgba(1, 1, 2, 0.3);
+  background-color: #FF0077;
+}
+
+.products .container form .section .card:hover .checkbox {
+  color: white;
+}
+
+.products .container form .section .card .card_content {
+  padding-top: 20px;
+}
+
+.products .container form .section .card .card_content h3 {
+  padding: 2px 0;
+}
+
+.products .container form .section .card .card_content h5 {
+  padding: 2px 0;
+}
+
+.products .container form .section .card .checkbox {
+  color: #FF0077;
+  -webkit-transition: .2s all linear;
+  transition: .2s all linear;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0;
+}
+/*# sourceMappingURL=main.css.map */
