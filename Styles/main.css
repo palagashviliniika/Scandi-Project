@@ -361,6 +361,10 @@ footer .container .copyright {
 
 html {
   scroll-behavior: smooth;
+  max-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
 body {
@@ -379,12 +383,5 @@ body {
 h1, h2, h3, h4, h5 {
   padding: 0;
   margin: 0;
-}
-
-.page {
-  max-width: 100vw;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
 }
 /*# sourceMappingURL=main.css.map */

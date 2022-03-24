@@ -8,7 +8,10 @@ $primaryColor: #FF0077;
 
 html {
     scroll-behavior: smooth;
-
+    max-width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
 body {
@@ -27,9 +30,3 @@ h1,h2,h3,h4,h5{
     margin: 0;
 }
 
-.page{
-    max-width: 100vw;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-}
