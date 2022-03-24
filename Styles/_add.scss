@@ -1,0 +1,134 @@
+@mixin flexCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+$secondaryColor: #FF0077;
+$primaryColor: black;
+
+.add{
+    margin: 0 auto;
+    margin-top: 4rem;
+    padding-bottom: 12rem;
+
+    .container{
+        width: 80vw;
+        margin: 0 auto;
+        padding: 0 25px 40px 25px;
+        box-shadow: 0px 5px 10px 0px rgba(0.5,1,2,0.2);
+
+        h3{
+            font-size: 3rem;
+            padding: 35px 0 20px 0;
+        }
+    }
+
+    form{
+        ::placeholder{
+                color: #ff0077c9;
+            }
+        label{
+            margin: 10px auto 5px auto;
+            font-size: 1.5rem;
+            font-weight: 500;
+            display: block;
+        }
+
+        input[type=text]{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgb(182, 181, 181);
+            transition: .2s all linear;
+            outline-color: rgb(182, 181, 181);
+
+            &:focus{
+                outline-width: 1.5px;
+                outline-color: #ff0077c9;
+            }
+        }
+
+        select{
+            
+            box-sizing: border-box;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgb(182, 181, 181);
+            outline: none;
+
+            option{
+                color: #ff0077c9;
+            }
+
+        }
+
+        input[type=submit]{
+                margin: 5px 15px 0 0;
+                padding: 8px 15px;
+                color: white;
+                background-color: $secondaryColor;
+                font-size: 1.5rem;
+                border-radius: 5px;
+                border: none;
+                transition: 0.2s all linear;
+
+                &:hover{
+                    background-color: #d6106d;
+                    cursor: pointer;
+                }
+
+                &:active{
+                    transform: translateY(2px)
+                }
+        }
+
+        input[type=button]{
+            margin: 5px 15px 0 0;
+            padding: 8px 15px;
+            color: white;
+            background-color: $secondaryColor;
+            font-size: 1.5rem;
+            border-radius: 5px;
+            border: none;
+            transition: 0.2s all linear;
+
+            &:hover{
+                background-color: #d6106d;
+                cursor: pointer;
+            }
+
+            &:active{
+                transform: translateY(2px)
+            }
+        }
+
+        .error{
+            padding-top: 5px;
+            font-weight: 700;
+            color: red;
+        }
+
+        .form1{
+            @include flexCenter();
+            width: 100%;
+
+            .sku_input{
+                width: 49%;
+            }
+
+            .price_input{
+                width: 49%;
+            }
+        }
+
+        .form2{
+            @include flexCenter();
+            width: 100%;
+
+            .input{
+                width: 32%;
+            }
+        }
+    }
+}

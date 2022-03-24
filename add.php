@@ -13,42 +13,62 @@
 </head>
 <body>
 
-<?php include "templates/header.php" ?>
+<div class="page">
 
-<section>
-    <h3>Product Add</h3>
-    <form id="product_form" action="add.php" method="POST">
+    <?php include "templates/header.php" ?>
 
-        <label for="sku">SKU</label>
-        <input type="text" id="sku" name="sku" value="" placeholder="Please provide SKU" oninput="clearErrorField(this.id)">
-        <div id="error_sku" class="error"></div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" value="" placeholder="Please provide Name" oninput="clearErrorField(this.id)">
-        <div id="error_name" class="error"></div>
-        <label for="price">Price ($)</label>
-        <input type="text" id="price" name="price" value="" placeholder="Please provide Price" oninput="clearErrorField(this.id)">
-        <div id="error_price" class="error"></div>
-        <label for="productType">Type Switcher</label>
+    <div class="add">
 
-        <select name="productType" id="productType" onchange="setForm(this.id)" oninput="clearErrorField(this.id)">
-            <option value="empty">Select Type</option>
-            <option value="DVD">DVD</option>
-            <option value="Book">Book</option>
-            <option value="Furniture">Furniture</option>
-        </select>
-        <div id="error_productType" class="error"></div>
+        <div class="container">
 
-        <div id="prod_type"></div>
+            <h3>Product Add</h3>
 
-        <input type="submit" id="submit" name="submit" value="Save" >
-        <input type="button" id="cancel" name="cancel" value="Cancel" onclick="location.href = 'index.php';">
+            <form id="product_form" action="add.php" method="POST">
 
-        <script src="js/app.js"></script>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="" placeholder="Please provide Name" oninput="clearErrorField(this.id)">
+                <div id="error_name" class="error"></div>
+                
+                <div class="form1">
+                    <div class="sku_input">
+                        <label for="sku">SKU</label>
+                        <input type="text" id="sku" name="sku" value="" placeholder="Please provide SKU" oninput="clearErrorField(this.id)">
+                        <div id="error_sku" class="error"></div>
+                    </div>
 
-    </form>
-</section>
+                    <div class="price_input">
+                        <label for="price">Price ($)</label>
+                        <input type="text" id="price" name="price" value="" placeholder="Please provide Price" oninput="clearErrorField(this.id)">
+                        <div id="error_price" class="error"></div>
+                    </div>  
+                </div>
 
-<?php include "templates/footer.php";?>
+                <label for="productType">Type Switcher</label>
+
+                <select name="productType" id="productType" onchange="setForm(this.id)" oninput="clearErrorField(this.id)">
+                    <option value="empty" class="empty">Select Type</option>
+                    <option value="DVD">DVD</option>
+                    <option value="Book">Book</option>
+                    <option value="Furniture">Furniture</option>
+                </select>
+                <div id="error_productType" class="error"></div>
+
+                <div id="prod_type"></div>
+
+                <input type="submit" id="submit" name="submit" value="Save" >
+                <input type="button" id="cancel" name="cancel" value="Cancel" onclick="location.href = 'index.php';">
+
+                <script src="js/app.js"></script>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <?php include "templates/footer.php";?>
+
+</div>
 
 </body>
 </html>

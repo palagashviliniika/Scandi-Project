@@ -1,0 +1,28 @@
+@mixin flexCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+$secondaryColor: #FF0077;
+$primaryColor: black;
+
+footer{
+    position: absolute;
+    bottom: 0;
+
+    .line{
+        width: 100vw;
+        height: 15px;
+        background: $secondaryColor;
+    }
+
+    .container{
+        width: 80vw;
+        margin: 0 auto;
+        padding: 35px 25px;
+        
+        .copyright{
+            text-align: center;
+        }
+    }
+}

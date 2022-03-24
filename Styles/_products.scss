@@ -7,10 +7,9 @@ $secondaryColor: #FF0077;
 $primaryColor: black;
 
 .products{
-    width: 100vw;
     margin: 0 auto;
-    padding-bottom: 90px;
     margin-top: 4rem;
+    padding-bottom: 12rem;
 
     .container{
         width: 80vw;
@@ -23,7 +22,8 @@ $primaryColor: black;
 
         form{
             h2{
-                padding: 25px 0;
+                padding: 35px 0;
+                font-size: 1.8rem;
             }
 
             .section{
@@ -31,6 +31,8 @@ $primaryColor: black;
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: stretch;
+                max-height: 50vh;
+                overflow-y: auto;
 
                 .card{
                     width: 22%;
