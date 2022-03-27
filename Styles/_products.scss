@@ -22,17 +22,17 @@ $primaryColor: black;
 
         form{
             h2{
-                padding: 35px 0;
                 font-size: 1.8rem;
             }
 
             .section{
+                padding: 35px 0;
                 @include flexCenter();
                 flex-wrap: wrap;
                 justify-content: center;
                 align-items: stretch;
-                max-height: 50vh;
-                overflow-y: auto;
+                // max-height: 50vh;
+                // overflow-y: auto;
 
                 .card{
                     width: 22%;

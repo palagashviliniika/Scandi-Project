@@ -1,7 +1,5 @@
 <?php
 
-    include 'includes/autoloader.inc.php';
-
 ?>
 
 <!doctype html>
@@ -13,6 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="Styles/main.css">
     <title>Document</title>
+
+<!--including font awesome cdn for icons-->
     <script
             src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -29,10 +29,14 @@
                 <a class="name" href="index.php">Task Page</a>
             </div>
             <div class="navbar">
+
+<!--------------directing to add page on click-->
                 <button onclick="window.location.href = 'add.php'">
                     <i class="fa-solid fa-cart-plus"></i>    
                         ADD
                 </button>
+
+<!--------------delete form submit btn. sending checked ids to the delete request-->
                 <button id="delete-product-btn" form="delete_product_form" value="Delete" name="delete-product-btn">
                     <i class="fa-solid fa-trash"></i>
                     MASS DELETE

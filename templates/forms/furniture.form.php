@@ -1,3 +1,6 @@
+<!--template for add furniture height, width and length input-->
+
+
 <div class="form2">
     <div class="input">
         <label for="height">Height (CM)</label>

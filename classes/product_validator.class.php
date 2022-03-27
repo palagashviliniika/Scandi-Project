@@ -54,10 +54,6 @@ Class validator {
 
         if(empty($val)){
             $this->addError('sku','Please, submit required data');
-        } else{
-            if (!preg_match('/^[A-Z]+[0-9]+[0-9A-Z]+$/', $val)){
-                $this->addError('sku', 'Please, provide the proper SKU');
-            }
         }
     }
 
@@ -66,10 +62,6 @@ Class validator {
 
         if (empty($val)){
             $this->addError('name', 'Please, submit required data');
-        } else {
-            if (!preg_match('/^[a-zA-Z\s\']+$/', $val)){
-                $this->addError('name', 'Please, provide the proper name');
-            }
         }
     }
 
@@ -79,7 +71,7 @@ Class validator {
         if (empty($val)){
             $this->addError('price','Please, submit required data');
         } else {
-            if (!preg_match('/[0-9]+\\.[0-9]+/i', $val)){
+            if (!preg_match('/^[0-9.]+$/', $val)){
                 $this->addError('price', 'Please, provide the proper price');
             }
         }

@@ -103,11 +103,11 @@
 }
 
 .products .container form h2 {
-  padding: 35px 0;
   font-size: 1.8rem;
 }
 
 .products .container form .section {
+  padding: 35px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,8 +125,6 @@
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  max-height: 50vh;
-  overflow-y: auto;
 }
 
 .products .container form .section .card {
@@ -272,7 +270,7 @@ footer .container .copyright {
 }
 
 .add form input[type=submit] {
-  margin: 5px 15px 0 0;
+  margin: 25px 15px 0 0;
   padding: 8px 15px;
   color: white;
   background-color: #FF0077;
@@ -294,7 +292,7 @@ footer .container .copyright {
 }
 
 .add form input[type=button] {
-  margin: 5px 15px 0 0;
+  margin: 25px 15px 0 0;
   padding: 8px 15px;
   color: white;
   background-color: #FF0077;

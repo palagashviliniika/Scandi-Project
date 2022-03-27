@@ -37,6 +37,7 @@
 
             <form id="product_form" action="add.php" method="POST">
 
+<!--------------Calling 'clearErrorField' function to clear error fields when user enters the data-->
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" value="" placeholder="Please provide Name" oninput="clearErrorField(this.id)">
                 <div id="error_name" class="error"></div>
@@ -57,6 +58,7 @@
 
                 <label for="productType">Type Switcher</label>
 
+<!--------------calling 'setForm' function when type switcher is changed-->
                 <select name="productType" id="productType" onchange="setForm(this.id)" oninput="clearErrorField(this.id)">
                     <option value="empty" class="empty">Select Type</option>
                     <option value="DVD">DVD</option>
@@ -68,6 +70,8 @@
                 <div id="prod_type"></div>
 
                 <input type="submit" id="submit" name="submit" value="Save" >
+
+<!--------------returning to the index page when cancel button is clicked-->
                 <input type="button" id="cancel" name="cancel" value="Cancel" onclick="location.href = 'index.php';">
 
                 <script src="js/app.js"></script>
