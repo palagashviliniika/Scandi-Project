@@ -55,13 +55,14 @@ $('#product_form').submit(function (event) {
                 window.location.href = "index.php";
             } else {
 
-                // turning json string into a js object
+                // turning json object into a js object
                 response = JSON.parse(response);
 
                 // looping errors assoc id to show the errors
                 Object.keys(response).forEach((error) => {
                     let errorField = document.getElementById('error_' + error);
 
+                    //show error to appropriate field
                     errorField.innerHTML = response[error];
                 })
             }

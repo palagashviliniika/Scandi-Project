@@ -11,7 +11,7 @@ $errors = $validation->validateForm();
 
 //checking if returned errors are empty or not
 if ($errors){
-    // if there are errors, we are sending data from the server side and turning php assoc array into json string
+    // if there are errors, we are sending data from the server side and turning php assoc array into json object
     print_r(json_encode($errors));
 } else{
 
